@@ -4,6 +4,6 @@ class Api
       url = "https://pokeapi.co/api/v2/pokemon/"
       response = Net::HTTP.get(URI(url))
       pokemons = JSON.parse(response)["results"]
-      binding.pry
+      pokemons.each {|p| pokemon.new(name: p["name"])}
   end 
 end 
