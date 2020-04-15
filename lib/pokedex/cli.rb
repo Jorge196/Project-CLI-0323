@@ -6,6 +6,7 @@ class Cli
     puts "Enter a Pokemon to see its ability and evolution."
     puts " "
     Api.get_pokemon
+    binding.pry 
    
   end
 end
