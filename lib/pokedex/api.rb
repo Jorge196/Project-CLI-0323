@@ -1,5 +1,6 @@
 class Api
-  def self.get_pokemon 
+  
+  def self.get_pokemon(evolution) 
     
   end 
 
