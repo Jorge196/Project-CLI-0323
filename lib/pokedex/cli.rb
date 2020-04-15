@@ -5,8 +5,7 @@ class Cli
     puts " "
     puts "Enter a Pokemon to see its ability and evolution."
     puts " "
-    @evolution = gets.strip.downcase
-    Api.get_pokemon(@evolution)
+    Api.get_pokemon
    
   end
 end
