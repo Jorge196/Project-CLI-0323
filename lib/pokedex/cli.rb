@@ -3,7 +3,10 @@ class Cli
     puts " "
     puts "Hello Trainer, and welcome to the POKEDEX!"
     puts " "
-    Api.get_pokemon
-    # puts "Enter a Pokemon to see its "
+    puts "Enter a Pokemon to see its ability and evolution."
+    puts " "
+    @evolution = gets.strip.downcase
+    Api.get_pokemon(@evolution)
+   
   end
 end
