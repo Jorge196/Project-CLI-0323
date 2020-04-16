@@ -1,5 +1,5 @@
 class Pokemon
-  attr_accessor :name, :url #and all the other attributes of pokemon 
+  attr_accessor :name, :url, :ability #and all the other attributes of pokemon 
   @@all = []
   
   def initialize(name:, url:)
@@ -10,6 +10,10 @@ class Pokemon
   
   def self.all 
     @@all
+  end 
+  
+  def self.find_by_ability(ability)
+    @@all.select {|p| p.ability == ability}
   end 
 
 end
