@@ -17,6 +17,8 @@ class Api
       pokemon_object.weight = pokemon["weight"]
       pokemon_object.height = pokemon["height"]
       pokemon_object.base_experience = pokemon["base_experience"]
+      #pokemon["moves"][0]["move"]["name"]
+      #pokemon["abilities"][0]["ability"]["name"]
       binding.pry
   end 
     
