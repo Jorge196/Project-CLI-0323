@@ -47,5 +47,6 @@ class Cli
   end 
   def print_single_pokemon(pokemon_object)
     #printout all details for one pokemon
+    pokemon_object.first 
   end 
 end

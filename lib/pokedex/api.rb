@@ -13,9 +13,11 @@ class Api
       url = pokemon_object.url 
       response = Net::HTTP.get(URI(url))
       pokemon = JSON.parse(response)
-      binding.pry 
+       
       pokemon_object.weight = pokemon["weight"]
       pokemon_object.height = pokemon["height"]
+      pokemon_object.base_experience = pokemon["base_experience"]
+      binding.pry
   end 
     
 end 
