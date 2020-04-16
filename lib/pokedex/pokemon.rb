@@ -5,6 +5,7 @@ class Pokemon
   def initialize(name:, url:, ability:)
     @name = name 
     @url = url
+    @ability = ability 
     @@all << self 
   end 
   
