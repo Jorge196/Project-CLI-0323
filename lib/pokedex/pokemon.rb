@@ -1,5 +1,5 @@
 class Pokemon
-  attr_accessor :name, :url, :ability #and all the other attributes of pokemon 
+  attr_accessor :name, :url, :ability, :effect #and all the other attributes of pokemon 
   @@all = []
   
   def initialize(name:, url:)
