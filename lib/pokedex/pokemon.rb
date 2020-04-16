@@ -7,6 +7,7 @@ class Pokemon
     @url = url
     @abilities = []
     @weight = []
+    @moves = []
     
     
     
@@ -15,11 +16,6 @@ class Pokemon
   
   def self.all 
     @@all
-  end 
-  
-  def self.find_by_name(name)
-   
-    @@all.select {|p| p.name == name}
   end 
 
 end

@@ -37,7 +37,8 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
-    #printout all details for one pokemon
-    #pokemon_object.first 
+    puts pokemon_object.height
+    puts pokemon_object.weight 
+    puts pokemon_object.base_experience
   end 
 end
