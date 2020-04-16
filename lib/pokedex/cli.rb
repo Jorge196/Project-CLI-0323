@@ -7,6 +7,7 @@ class Cli
     puts " "
     Api.get_pokemon
     print_pokemon
+    puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select a new ability or 'exit' to exit" 
     puts " "
     prompt
     input = gets.strip.downcase
@@ -14,6 +15,7 @@ class Cli
         if input == 'list'
           print_pokemon(Pokemon.find_by_ability(@ability))
         elsif input.to_i > 0 && input.to_i <= Pokemon.find_by_ability(@ability).length
+        binding.pry 
             pokemon = Pokemon.find_by_ability(@ability)[input.to_i-1]
             Api.get_pokemon_details(pokemon) if !pokemon.effect 
             print_pokemon(pokemon)
@@ -21,8 +23,10 @@ class Cli
         
         else
           puts "I don't know what you're saying - please try again"
+          puts " "
         end 
         prompt
+        input = gets.strip.downcase
     end 
     puts " "
     puts "Goodbye Trainer!"
@@ -42,11 +46,5 @@ class Cli
     Pokemon.all.each.with_index(1) do |pokemon, i|
       puts "#{i}. #{pokemon.name.capitalize}"
     end 
-  end 
-  
-  def prompt 
-    puts " "
-    puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select a new ability or 'exit' to exit" 
-    puts " "
   end 
 end
