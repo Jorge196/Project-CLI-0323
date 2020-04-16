@@ -5,20 +5,20 @@ class Cli
     puts " "
     puts "Enter a Pokemon to see its ability and evolution."
     puts " "
-    @ability = gets.strip.downcase
     Api.get_pokemon
     print_pokemon
-    puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select a new ability or 'exit' to exit" 
+    puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select the abilities of a given Pokemon or 'exit' to exit" 
     puts " "
     input = gets.strip.downcase
     while input != 'exit' 
         if input == 'list'
-          print_pokemon(Pokemon.find_by_ability(@ability))
-        elsif input.to_i > 0 && input.to_i <= Pokemon.find_by_ability(@ability).length
-            pokemon = Pokemon.find_by_ability(@ability)[input.to_i-1]
-            Api.get_pokemon_details(pokemon) if !pokemon.effect 
-            print_pokemon(pokemon)
-        elsif input == "ability"
+          print_pokemon
+        elsif input.to_i > 0 && input.to_i <= Pokemon.all.length
+            pokemon = Pokemon.all[input.to_i-1]
+            Api.get_pokemon_details(pokemon) 
+           
+            print_single_pokemon(pokemon)
+        elsif input == "name"
         
         else
           puts "I don't know what you're saying - please try again"
@@ -44,5 +44,8 @@ class Cli
     Pokemon.all.each.with_index(1) do |pokemon, i|
       puts "#{i}. #{pokemon.name.capitalize}"
     end 
+  end 
+  def print_single_pokemon(pokemon_object)
+    #printout all details for one pokemon
   end 
 end
