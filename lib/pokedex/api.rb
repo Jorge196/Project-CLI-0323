@@ -13,7 +13,7 @@ class Api
       url = pokemon_object.url 
       response = Net::HTTP.get(URI(url))
       pokemon = JSON.parse(response)["results"]
-      binding.pry
+      
   end 
     
 end 
