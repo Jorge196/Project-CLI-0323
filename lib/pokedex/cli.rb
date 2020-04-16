@@ -28,16 +28,6 @@ class Cli
     end 
     puts " "
     puts "Goodbye Trainer!"
-    # get input from user 
-    # while loop until the input is exit 
-    # if it is list print pokemon again 
-    # if it's a number get the details for that pokemon from the api and print them out.
-    # else print error_message
-    # prompt user, get input and do the loop again
-    
-    
-   
-   
   end
   
   def print_pokemon
