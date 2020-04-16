@@ -45,6 +45,7 @@ class Cli
       puts "#{i}. #{pokemon.name.capitalize}"
     end 
   end 
+  
   def print_single_pokemon(pokemon_object)
     #printout all details for one pokemon
     #pokemon_object.first 
