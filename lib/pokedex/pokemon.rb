@@ -9,6 +9,7 @@ class Pokemon
     @weight = []
     
     
+    
     @@all << self 
   end 
   
