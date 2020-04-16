@@ -12,11 +12,8 @@ class Cli
     input = gets.strip.downcase
     while input != 'exit' 
         if input == 'list'
-          print_pokemon(Ability.find_by_ability(@ability).pokemons)
-          elsif input.to_i > 0 && input.to_i <= Ability.find_by_ability(@ability).pokemons.length 
-            pokemon = Ability.find_by_ability(@ability).pokemons[input.to_i-1]
-        # elsif input.to_i > 0 && input.to_i <= Pokemon.all.length
-            # pokemon = Pokemon.all[input.to_i-1]
+         elsif input.to_i > 0 && input.to_i <= Pokemon.all.length
+            pokemon = Pokemon.all[input.to_i-1]
             Api.get_pokemon_details(pokemon) 
            
             print_single_pokemon(pokemon)
