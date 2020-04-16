@@ -5,17 +5,16 @@ class Cli
     puts " "
     puts "Enter a Pokemon to see its ability and evolution."
     puts " "
+    @ability = gets.strip.downcase
     Api.get_pokemon
     print_pokemon
     puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select a new ability or 'exit' to exit" 
     puts " "
-    prompt
     input = gets.strip.downcase
     while input != 'exit' 
         if input == 'list'
           print_pokemon(Pokemon.find_by_ability(@ability))
         elsif input.to_i > 0 && input.to_i <= Pokemon.find_by_ability(@ability).length
-        binding.pry 
             pokemon = Pokemon.find_by_ability(@ability)[input.to_i-1]
             Api.get_pokemon_details(pokemon) if !pokemon.effect 
             print_pokemon(pokemon)
@@ -25,7 +24,6 @@ class Cli
           puts "I don't know what you're saying - please try again"
           puts " "
         end 
-        prompt
         input = gets.strip.downcase
     end 
     puts " "
