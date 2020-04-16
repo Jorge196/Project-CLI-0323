@@ -9,6 +9,17 @@ class Cli
     print_pokemon
     puts " "
     puts "Type a number to see more details on a pokemon, 'list' to see the list again or 'exit' to exit"
+    input = gets.strip.downcase
+    while input != 'exit' 
+        if input == 'list'
+          print_pokemon(Pokemon.find_by_ability(@ability))
+        elsif input.to_i > 0 && input.to_i <= Pokemon.find_by_ability(@ability).length
+            pokemon = Pokemon.find_by_ability(@ability)[input.to_i-1]
+            Api.get_pokemon_details(pokemon)
+    end 
+    puts " "
+    puts "Goodbye Trainer!"
+    binding.pry 
     # get input from user 
     # while loop until the input is exit 
     # if it is list print pokemon again 
