@@ -23,6 +23,10 @@ class Cli
           puts "I don't know what you're saying - please try again"
           puts " "
         end 
+        
+    puts " "
+    input = gets.strip.downcase 
+    puts 
         input = gets.strip.downcase
     end 
     puts " "
@@ -42,7 +46,7 @@ class Cli
       base_experience = pokemon_object.base_experience
       abilities = pokemon_object.abilities 
       moves = pokemon_object.moves 
-      
+      # binding.pry 
     puts name   
     puts abilities
     puts height
@@ -50,6 +54,6 @@ class Cli
     puts base_experience
     puts moves
     
-    binding.pry 
+    
   end 
 end
