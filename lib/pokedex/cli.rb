@@ -36,11 +36,14 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
-     binding.pry
-    puts pokemon.name 
+      name = pokemon_object.name 
       weight = pokemon_object.weight 
-    puts pokemon_object.height
-    puts pokemon_object.weight 
-    puts pokemon_object.base_experience
+      height = pokemon_object.height 
+      base_experience = pokemon_object.base_experience
+    puts name   
+    puts height
+    puts weight 
+    puts base_experience
+    binding.pry 
   end 
 end
