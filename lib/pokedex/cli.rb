@@ -2,6 +2,9 @@ class Cli
   def run
     puts " "
     puts "Hello Trainer, and welcome to the POKEDEX!"
+    puts " "
+    puts "Type a number from 1-20 to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
+    puts " "
     Api.get_pokemon 
     prompt 
     input = gets.strip.downcase
@@ -19,37 +22,15 @@ class Cli
           puts "I don't know what you're saying - please try again"
           puts " "
         end 
-        prompt 
         input = gets.strip.downcase 
       end 
-      while input != 'exit'
-      if input == '1-20'
-        print_single_pokemon
       
-      elsif input.to_i > 0 && input.to_i <= Pokemon.all.length 
-        pokemon = Pokemon.all[input.to_i-1]
-            Api.get_pokemon_details(pokemon) if !pokemon.name 
-            print_single_pokemon 
-        elsif input == "name"
-        else
-          puts "I don't know what you're saying - please try again"
-          puts " "
-        end 
-      puts " "
-    puts " "
-    
-    
     puts " "
     input = gets.strip.downcase 
     puts " "
     puts "Goodbye Trainer!"
   end 
   
-  def prompt 
-    puts " "
-    puts "Type a number from 1-20 to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
-    puts " "
-  end 
   
  
   
@@ -60,10 +41,6 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
-      
-    puts " "
-    puts "Here is this pokemon #(name)"
-    puts " "
     
       name = pokemon_object.name 
       weight = pokemon_object.weight 
