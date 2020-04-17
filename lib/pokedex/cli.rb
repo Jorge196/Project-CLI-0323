@@ -3,10 +3,9 @@ class Cli
     puts " "
     puts "Hello Trainer, and welcome to the POKEDEX!"
     puts " "
-    puts "Type a number from 1-20 to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
+    puts "Type a number from '1-20' to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
     puts " "
     Api.get_pokemon 
-    prompt 
     input = gets.strip.downcase
     while input != 'exit' 
         if input == 'list'
@@ -16,7 +15,6 @@ class Cli
             pokemon = Pokemon.all[input.to_i-1]
             Api.get_pokemon_details(pokemon) if !pokemon.name 
             print_pokemon(pokemon)
-           
         elsif input == "name"
         else
           puts "I don't know what you're saying - please try again"
