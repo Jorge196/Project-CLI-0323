@@ -13,7 +13,7 @@ class Cli
             pokemon = Pokemon.all[input.to_i-1]
             Api.get_pokemon_details(pokemon) if !pokemon.name 
             print_pokemon(pokemon)
-            print_single_pokemon(pokemon)
+           
         elsif input == "name"
         else
           puts "I don't know what you're saying - please try again"
@@ -22,6 +22,19 @@ class Cli
         prompt 
         input = gets.strip.downcase 
       end 
+      while input != 'exit'
+      if input == '1-20'
+        print_single_pokemon
+      
+      elsif input.to_i > 0 && input.to_i <= Pokemon.all.length 
+        pokemon = Pokemon.all[input.to_i-1]
+            Api.get_pokemon_details(pokemon) if !pokemon.name 
+            print_single_pokemon 
+        elsif input == "name"
+        else
+          puts "I don't know what you're saying - please try again"
+          puts " "
+        end 
       puts " "
     puts " "
     
