@@ -17,5 +17,9 @@ class Pokemon
   def self.all 
     @@all
   end 
+  
+  def self.find_by_name(name)
+    @@all.find {|i| i.name == name}
+  end 
 
 end
