@@ -40,10 +40,16 @@ class Cli
       weight = pokemon_object.weight 
       height = pokemon_object.height 
       base_experience = pokemon_object.base_experience
+      abilities = pokemon_object.abilities 
+      moves = pokemon_object.moves 
+      
     puts name   
+    puts abilities
     puts height
     puts weight 
     puts base_experience
+    puts moves
+    
     binding.pry 
   end 
 end
