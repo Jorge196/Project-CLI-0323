@@ -13,7 +13,8 @@ class Cli
           
         elsif input.to_i > 0 && input.to_i <= Pokemon.all.length
             pokemon = Pokemon.all[input.to_i-1]
-            Api.get_pokemon_details(pokemon) if !pokemon.name 
+            Api.get_pokemon_details(pokemon) if !pokemon.find_by_name
+            binding.pry
             print_pokemon(pokemon)
         elsif input == "name"
         else
@@ -23,6 +24,7 @@ class Cli
         input = gets.strip.downcase 
       end 
       
+      
     puts " "
     input = gets.strip.downcase 
     puts " "
@@ -30,11 +32,13 @@ class Cli
   end 
   
   
+  
  
   
   def print_pokemon
     Pokemon.all.each.with_index(1) do |pokemon, i|
       puts "#{i}. #{pokemon.name.capitalize}"
+      
     end 
   end 
   
@@ -46,6 +50,7 @@ class Cli
       base_experience = pokemon_object.base_experience
       abilities = pokemon_object.abilities 
       moves = pokemon_object.moves 
+      binding.pry
       
     puts name   
     puts abilities
