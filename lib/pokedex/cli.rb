@@ -13,11 +13,8 @@ class Cli
             pokemon = Pokemon.all[input.to_i-1]
             Api.get_pokemon_details(pokemon) if !pokemon.name 
             print_pokemon(pokemon)
-           
             print_single_pokemon(pokemon)
         elsif input == "name"
-            prompt_name
-        
         else
           puts "I don't know what you're saying - please try again"
           puts " "
@@ -37,7 +34,7 @@ class Cli
   
   def prompt 
     puts " "
-    puts "Type a number to see more details on a pokemon, 'list' to see the list again, 'ability' to select the abilities of a given Pokemon or 'exit' to exit"
+    puts "Type a number from 1-20 to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
     puts " "
   end 
   
@@ -50,6 +47,11 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
+      
+    puts " "
+    puts "Here is this pokemon #(name)"
+    puts " "
+    
       name = pokemon_object.name 
       weight = pokemon_object.weight 
       height = pokemon_object.height 
