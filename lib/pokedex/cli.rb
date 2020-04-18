@@ -16,13 +16,14 @@ class Cli
             print_single_pokemon(pokemon)
         elsif user_input == "name"
         else
-  # if the CLI does not know how the command you ran it gives this statement 
+  # if the CLI does not know the command you ran it gives this statement 
           puts "I don't know what you're saying - please try again"
           puts " "
-          binding.pry
           get_user_input
   # after getting this statement it loops you back into the 'type a number' input to start again.
+  # after typing 
         end 
+        binding.pry
         
         user_input = get_user_input 
       end 
@@ -40,6 +41,8 @@ class Cli
           'list' to see the list again, or 'exit' to exit"
     puts " "
     print "Command: "
+    puts " "
+# have a line separating the command of each input in order for the code to look cleaner when executed 
     input = gets.strip.downcase
     return input
   end
