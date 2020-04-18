@@ -12,8 +12,9 @@ class Cli
           print_pokemon 
         elsif user_input.to_i > 0 && user_input.to_i <= Pokemon.all.length
             pokemon = Pokemon.all[user_input.to_i-1]
-            Api.get_pokemon_details(pokemon) if !Pokemon.find_by_name(pokemon.name)
-            print_single_pokemon(pokemon)
+            pokemon_details = Api.get_pokemon_details(pokemon) if !Pokemon.find_by_name(pokemon.name)
+            binding.pry
+            print_single_pokemon(pokemon_details)
         elsif user_input == "name"
         else
   # if the CLI does not know the command you ran it gives this statement 
@@ -24,7 +25,7 @@ class Cli
           
   # after typing each corresponding number gives you its details and its moves section you get every move with commas in paragraph form
         end 
-        binding.pry
+        # binding.pry
         
         user_input = get_user_input 
       end 
@@ -58,20 +59,13 @@ class Cli
   
   def print_single_pokemon(pokemon_object)
     
-      name = pokemon_object.name 
-      weight = pokemon_object.weight 
-      height = pokemon_object.height 
-      base_experience = pokemon_object.base_experience
-      abilities = pokemon_object.abilities 
-      moves = pokemon_object.moves 
+      puts pokemon_object.name 
+      puts pokemon_object.weight 
+      puts pokemon_object.height 
+      puts pokemon_object.base_experience
+      puts pokemon_object.abilities 
+      puts pokemon_object.moves 
       # binding.pry
-      
-    puts name   
-    puts abilities
-    puts height
-    puts weight 
-    puts base_experience
-    puts moves
   end 
     
 end 
