@@ -3,25 +3,27 @@ class Cli
     puts " "
     puts "Hello Trainer, and welcome to the POKEDEX!"
     puts " "
-    puts "Type a number from '1-20' to see more details on a pokemon, 'list' to see the list again, or 'exit' to exit"
-    puts " "
-    Api.get_pokemon 
-    input = gets.strip.downcase
-    while input != 'exit' 
-        if input == 'list'
+    
+    Api.get_pokemon
+    
+    user_input = get_user_input
+    while user_input != 'exit' 
+        if user_input == 'list'
           print_pokemon 
           
-        elsif input.to_i > 0 && input.to_i <= Pokemon.all.length
-            pokemon = Pokemon.all[input.to_i-1]
-            Api.get_pokemon_details(pokemon) if !pokemon.find_by_name
-            binding.pry
-            print_pokemon(pokemon)
+        elsif user_input.to_i > 0 && user_input.to_i <= Pokemon.all.length
+            pokemon = Pokemon.all[user_input.to_i-1]
+           # binding.pry
+            Api.get_pokemon_details(pokemon) if !Pokemon.find_by_name(pokemon.name)
+          # binding.pry 
+            print_single_pokemon(pokemon)
         elsif input == "name"
         else
           puts "I don't know what you're saying - please try again"
           puts " "
         end 
-        input = gets.strip.downcase 
+        
+        user_input = get_user_input 
       end 
       
       
@@ -32,9 +34,16 @@ class Cli
   end 
   
   
-  
+  def get_user_input
+    puts "Type a number from '1-20' to see more details on a pokemon, 
+          'list' to see the list again, or 'exit' to exit"
+    puts " "
+    print "Command: "
+    input = gets.strip.downcase
+    return input
+  end
  
-  
+  # print the list of all pokemon to choose from
   def print_pokemon
     Pokemon.all.each.with_index(1) do |pokemon, i|
       puts "#{i}. #{pokemon.name.capitalize}"
@@ -50,7 +59,7 @@ class Cli
       base_experience = pokemon_object.base_experience
       abilities = pokemon_object.abilities 
       moves = pokemon_object.moves 
-      binding.pry
+      # binding.pry
       
     puts name   
     puts abilities
