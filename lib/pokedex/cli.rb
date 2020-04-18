@@ -10,17 +10,18 @@ class Cli
     while user_input != 'exit' 
         if user_input == 'list'
           print_pokemon 
-          
         elsif user_input.to_i > 0 && user_input.to_i <= Pokemon.all.length
             pokemon = Pokemon.all[user_input.to_i-1]
-           # binding.pry
             Api.get_pokemon_details(pokemon) if !Pokemon.find_by_name(pokemon.name)
-          # binding.pry 
             print_single_pokemon(pokemon)
-        elsif input == "name"
+        elsif user_input == "name"
         else
+  # if the CLI does not know how the command you ran it gives this statement 
           puts "I don't know what you're saying - please try again"
           puts " "
+          binding.pry
+          get_user_input
+  # after getting this statement it loops you back into the 'type a number' input to start again.
         end 
         
         user_input = get_user_input 
