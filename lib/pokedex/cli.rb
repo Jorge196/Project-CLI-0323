@@ -21,7 +21,8 @@ class Cli
           puts " "
           get_user_input
   # after getting this statement it loops you back into the 'type a number' input to start again.
-  # after typing 
+          
+  # after typing each corresponding number gives you its details and its moves section you get every move with commas in paragraph form
         end 
         binding.pry
         
