@@ -60,12 +60,12 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
-      puts "Name:  #{pokemon_object.name}" 
-      puts pokemon_object.weight 
-      puts pokemon_object.height 
-      puts pokemon_object.base_experience
-      puts pokemon_object.abilities 
-      puts pokemon_object.moves 
+      puts "Name:  #{pokemon_object.name.capitalize}" 
+      puts "Weight: #{pokemon_object.weight}" 
+      puts "Height: #{pokemon_object.height" 
+      puts "Base_Experience: #{pokemon_object.base_experience}"
+      puts "Abilities: #{pokemon_object.abilities}" 
+      puts "Moves: #{pokemon_object.moves}" 
       # binding.pry
       
   end 
