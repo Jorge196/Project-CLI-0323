@@ -55,7 +55,10 @@ class Cli
       puts "-----------------------------------------------"
       puts "Moves: #{pokemon_object.moves.join(' , ')}" 
       puts "-----------------------------------------------"
-       binding.pry
+      puts " "
+      puts "Type a number from '1-20' to see more details on a pokemon, 
+          'list' to see the list again, or 'exit' to exit"
+      
       
   end 
     
