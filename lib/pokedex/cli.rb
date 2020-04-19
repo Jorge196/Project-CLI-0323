@@ -6,10 +6,11 @@ class Cli
     puts "Type a number from '1-20' to see more details on a pokemon, 
           'list' to see the list again, or 'exit' to exit"
     puts " "
-      input = gets.strip.downcase
-    return input
+    input = gets.strip.downcase
+    
     
     Api.get_pokemon
+    Api.set_pokemon_details
     
     puts pokemons
     
