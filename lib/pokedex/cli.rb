@@ -2,7 +2,6 @@ class Cli
   def run
     Api.get_pokemon
     Api.set_pokemon_details
-    
     puts " "
     puts "Hello Trainer, and welcome to the POKEDEX!"
     puts " "
@@ -11,9 +10,7 @@ class Cli
     puts "Type a number from '1-20' to see more details on a pokemon, 
           'list' to see the list again, or 'exit' to exit"
     puts " "
-    
     input = gets.strip.downcase
-
     while input != 'exit' 
         if input == 'list'
           print_pokemon 
@@ -25,7 +22,6 @@ class Cli
           puts "I don't know what you're saying - please try again"
           puts " "
         end 
-    
         input = gets.strip.downcase
       end 
     puts " "
@@ -57,7 +53,7 @@ class Cli
       puts "Base_Experience: #{pokemon_object.base_experience}"
       puts "Abilities: #{pokemon_object.abilities}" 
       puts "Moves: #{pokemon_object.moves}" 
-       binding.pry
+       
       
   end 
     
