@@ -12,7 +12,7 @@ class Api
       url = pokemon_object.url 
       response = Net::HTTP.get(URI(url))
       pokemon = JSON.parse(response)
-      
+
       pokemon_object.abilities = pokemon["abilities"].map{|a| a["ability"]["name"]} 
       pokemon_object.moves = pokemon["moves"].map{|b| b["move"]["name"]}
       pokemon_object.weight = pokemon["weight"]

@@ -8,8 +8,7 @@ class Pokemon
     @abilities = []
     @weight = []
     @moves = []
-    
-    
+  
     
     @@all << self 
   end 
