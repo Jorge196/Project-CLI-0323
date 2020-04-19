@@ -51,9 +51,11 @@ class Cli
       puts "Weight: #{pokemon_object.weight}" 
       puts "Height: #{pokemon_object.height}" 
       puts "Base_Experience: #{pokemon_object.base_experience}"
-      puts "Abilities: #{pokemon_object.abilities}" 
-      puts "Moves: #{pokemon_object.moves}" 
-       
+      puts "Abilities: #{pokemon_object.abilities.join(' , ')}" 
+      puts "-----------------------------------------------"
+      puts "Moves: #{pokemon_object.moves.join(' , ')}" 
+      puts "-----------------------------------------------"
+       binding.pry
       
   end 
     

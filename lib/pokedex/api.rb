@@ -22,11 +22,4 @@ class Api
       end 
     end 
   end 
-      # pokemon_object.abilities = pokemon["abilities"].map{|a| a["ability"]["name"]} 
-      # pokemon_object.moves = pokemon["moves"].map{|b| b["move"]["name"]}
-      # pokemon_object.weight = pokemon["weight"]
-      # pokemon_object.height = pokemon["height"]
-      # pokemon_object.base_experience = pokemon["base_experience"]
       
-      # return pokemon_object 
-    
