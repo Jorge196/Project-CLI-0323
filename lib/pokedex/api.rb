@@ -14,11 +14,14 @@ class Api
         url = pokemon.url 
         response = Net::HTTP.get(URI(url))
         pokemon_details = JSON.parse(response)
-        pokemon.abilities = pokemon_details["abilties"].map{|a| a["ability"]["name"]} 
+        pokemon.abilities = pokemon_details["abilities"].map{|a| a["ability"]["name"]} 
         pokemon.moves = pokemon_details["moves"].map{|b| b["move"]["name"]}
         pokemon.weight = pokemon_details["weight"]
         pokemon.height = pokemon_details["height"]
         pokemon.base_experience = pokemon_details["base_experience"]
+      end 
+    end 
+  end 
       # pokemon_object.abilities = pokemon["abilities"].map{|a| a["ability"]["name"]} 
       # pokemon_object.moves = pokemon["moves"].map{|b| b["move"]["name"]}
       # pokemon_object.weight = pokemon["weight"]
@@ -26,6 +29,4 @@ class Api
       # pokemon_object.base_experience = pokemon["base_experience"]
       
       # return pokemon_object 
-  end 
-end 
     
