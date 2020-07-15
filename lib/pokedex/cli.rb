@@ -25,19 +25,8 @@ class Cli
         input = gets.strip.downcase
       end 
     puts " "
-    input = gets.strip.downcase 
-    puts " "
     puts "Goodbye Trainer!"
   end 
-  
-  
-  def prompt
-    puts " "
-    print "Command: "
-    puts " "
-
-  
-  end
   
   def print_pokemon
     Pokemon.all.each.with_index(1) do |pokemon, i|
@@ -47,19 +36,17 @@ class Cli
   end 
   
   def print_single_pokemon(pokemon_object)
-      puts "Name:  #{pokemon_object.name.capitalize}" 
-      puts "Weight: #{pokemon_object.weight}" 
-      puts "Height: #{pokemon_object.height}" 
-      puts "Base_Experience: #{pokemon_object.base_experience}"
-      puts "Abilities: #{pokemon_object.abilities.join(' , ')}" 
-      puts "-----------------------------------------------"
-      puts "Moves: #{pokemon_object.moves.join(' , ')}" 
-      puts "-----------------------------------------------"
-      puts " "
-      puts "Type a number from '1-20' to see more details on a pokemon, 
-          'list' to see the list again, or 'exit' to exit"
-      
-      
+    puts "Name:  #{pokemon_object.name.capitalize}" 
+    puts "Weight: #{pokemon_object.weight}" 
+    puts "Height: #{pokemon_object.height}" 
+    puts "Base_Experience: #{pokemon_object.base_experience}"
+    puts "Abilities: #{pokemon_object.abilities.join(' , ')}" 
+    puts "-----------------------------------------------"
+    puts "Moves: #{pokemon_object.moves.join(' , ')}" 
+    puts "-----------------------------------------------"
+    puts " "
+    puts "Type a number from '1-20' to see more details on a pokemon, 
+        'list' to see the list again, or 'exit' to exit"
   end 
     
 end 
