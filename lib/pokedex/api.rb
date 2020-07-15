@@ -9,7 +9,7 @@ class Api
      
   end 
   
-  def self.set_pokemon_details()
+  def self.set_pokemon_details
       Pokemon.all.each do |pokemon|
         url = pokemon.url 
         response = Net::HTTP.get(URI(url))
