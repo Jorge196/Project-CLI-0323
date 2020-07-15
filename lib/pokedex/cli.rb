@@ -47,7 +47,6 @@ class Cli
     puts " "
     puts "Type a number from '1-20' to see more details on a pokemon, 
         'list' to see the list again, or 'exit' to exit"
-  end 
-    
+  end  
 end 
 
